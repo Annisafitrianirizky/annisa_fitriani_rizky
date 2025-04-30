@@ -4,6 +4,7 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -20,40 +21,76 @@ header {
     background: yellowgreen;
     align-items: center;
     padding: 0 20px;
-    margin-bottom: 20px;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #333;
+}
+
+.burger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Responsive Part */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
     background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 60px;
+    right: 30px;
     padding: 10px 20px;
-    gap: 20px;
-    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
 }
 
-nav a {
-    color: black;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    transition: background 0.3s;
-}
-
-nav a:hover {
-    background: lightgray;
-    color: black;
-}
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .about {
@@ -62,10 +99,11 @@ main {
     justify-content: center;
     align-items: center;
     background: transparent;
+    color: white;
     padding: 20px;
     margin-bottom: 20px;
     width: 100%;
-    gap: 20px;
+    gap: 15px;
 }
 
 .foto {
@@ -76,7 +114,7 @@ main {
     border-radius: 10px;
     background: url('../assets/annisa.jpeg') no-repeat center center;
     background-size: cover;
-    margin-right: 20px;
+    margin-top: 50px;
 }
 
 .text {
@@ -86,7 +124,7 @@ main {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     margin-top: 20px;
     margin-left: 120px;
     margin-right: 120px;
@@ -96,8 +134,8 @@ main {
 }
 
 .text p {
-    text-align: center;
-    font-size: 16px;
+    margin: 2% auto;
+    padding: 2rem;
     color: white;
 }
 
@@ -107,6 +145,7 @@ main {
     align-items: center;
     flex-direction: column;
     background: transparent;
+    color: white;
     padding: 20px;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -119,7 +158,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: white;
@@ -128,12 +167,45 @@ main {
     gap: 20px;
 }
 
+.project-item {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    gap: 5px;
+}
+
+.project-item img {
+    max-width: 100%;
+    max-height: 250px; 
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.link {
+    color: white;
+}
+
+.link:hover {
+    color: aquamarine;
+}
+
 .contact {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: transparent;
+    color: white;
     padding: 20px;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -143,43 +215,38 @@ main {
 
 .contact-info {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: white;
-    margin-top: 20px;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-bottom: 20px;
-    padding: 40px;
     gap: 20px;
 }
 
 .contact-info p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+    width: 280px; /* Set a fixed width for all */
     background: white;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    gap: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
     font-size: 16px;
     color: black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-info a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .contact-info a:hover {
     background: lightgray;
-    text-decoration: none;
-    color: black;
-    padding: 10px 20px;
     border-radius: 50px;
-    transition: background 0.3s;
+    padding: 10px 20px;
 }
+
 
 footer {
     display: flex;
@@ -188,5 +255,63 @@ footer {
     background: yellowgreen;
     color: black;
     padding: 20px;
-    margin-top: 20px;
+}
+
+/* Small devices (phones, 0px - 767px) */
+@media only screen and (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .text,
+    .contact-info {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .foto {
+        width: 200px;
+        height: 200px;
+    }
+
+    .project-item {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-info p {
+        flex-direction: column;
+        font-size: 14px;
+    }
+}
+
+/* Medium devices (tablets, 768px - 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .text,
+    .contact-info {
+        margin-left: 60px;
+        margin-right: 60px;
+        padding: 30px;
+    }
+
+    .foto {
+        width: 250px;
+        height: 250px;
+    }
+
+    nav a {
+        padding: 8px 16px;
+    }
+}
+
+/* Large devices (desktops, 1025px and up) */
+@media only screen and (min-width: 1025px) {
+    /* Optional: you can add high-res styles here */
 }

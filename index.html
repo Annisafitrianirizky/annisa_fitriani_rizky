@@ -10,16 +10,25 @@
     <body>
         <header id="home" class="nav-header">
             <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
+                <div class="nav-logo">My Portfolio</div>
+              
+                <div class="burger" onclick="toggleMenu()">
+                  ☰
+                </div>
+              
+                <ul class="nav-links" id="navLinks">
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </nav>              
         </header>
         <main>
             <section class="about" id="about">
                 <div class="foto">
                 </div>
+                <h1>About Me</h1>
                 <div class="text">
                 <p>Hello! My name is Annisa Fitriani Rizky, and I am currently a 6th-semester student at 
                 the Institute Technology and Business Bina Sarana Global, 
@@ -40,16 +49,22 @@
                 <h2>My Projects</h2>
                 <div class="project-list">
                     <div class="project-item">
-                        <h3>Project 1</h3>
-                        <p>Description of Project 1.</p>
+                        <h3>SM Town Company Profile</h3>
+                        <img src="assets/project1.png" alt="Project 1 Screenshot">
+                        <br><br>
+                        <a href="https://revou-fundamental-course.github.io/07-apr-25-Annisafitrianirizky/" class="link">Link</a>
+                        <p>This is the result of a project I did during revou fundamental course, 
+                            I made simple company profile website using the SM Entertainment company as a study case, 
+                            this website consist of fundamental html, css, and javascript. 
+                            It was such a valuable experience, i got to learn layouting css from this course</p>
                     </div>
                     <div class="project-item">
-                        <h3>Project 2</h3>
-                        <p>Description of Project 2.</p>
-                    </div>
-                    <div class="project-item">
-                        <h3>Project 3</h3>
-                        <p>Description of Project 3.</p>
+                        <h3>Mobile Apps ResepKita</h3>
+                        <img src="assets/icon.png" alt="Project 2 Screenshot">
+                        <br><br>
+                        <a href="https://play.google.com/store/apps/details?id=com.kel4.resepkita&hl=id" class="link">Link</a>
+                        <p>This is the mobile apps project that me and my team made for my final semester exam, 
+                            and here my role is as a frontend developer, this app made using flutter dart.</p>
                     </div>
                 </div>
             <section class="contact" id="contact">
@@ -64,4 +79,11 @@
         <footer>
             <p>&copy; Annisa Fitriani Rizky 2025</p>
         </footer>
+        <script>
+            function toggleMenu() {
+              const nav = document.getElementById('navLinks');
+              nav.classList.toggle('show');
+            }
+          </script>          
+    </body>
 </html>
