@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background: url('https://i.pinimg.com/564x/0b/c4/b0/0bc4b0f9890cab2cd727baec029da1dc.jpg') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -61,7 +62,6 @@ header {
   cursor: pointer;
 }
 
-/* Responsive Part */
 @media (max-width: 768px) {
   .burger {
     display: block;
